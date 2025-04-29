@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function PasswordModal() {
+export default function PasswordModal({ onUnlock }) {
   const [mode, setMode] = useState('loading'); // 'create', 'verify', 'loading'
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -35,20 +35,19 @@ export default function PasswordModal() {
   useEffect(() => {
     window.electronAPI.receive('master-password-result', (result) => {
       if (result === 'ok') {
-        // Hide modal (could lift state up in real app)
         document.body.style.overflow = '';
-        setMode('unlocked');
+        if (onUnlock) onUnlock();
       } else {
         setError('Incorrect password.');
       }
     });
-  }, []);
+  }, [onUnlock]);
 
   if (mode === 'unlocked') return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-      <form onSubmit={handleSubmit} className="bg-white/20 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-white/30 min-w-[320px]">
+      <form onSubmit={handleSubmit} className="bg-white/20 backdrop-blur-lg rounded-xl p-8 shadow-2xl min-w-[320px] animate-fade-in">
         <h3 className="text-xl font-bold text-white mb-4">
           {mode === 'create' ? 'Create Master Password' : mode === 'verify' ? 'Enter Master Password' : 'Loading...'}
         </h3>

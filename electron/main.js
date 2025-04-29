@@ -153,6 +153,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
+    icon: path.join(__dirname, 'BastionIcon.ico'),
+    title: 'Bastion - Encrypted File Manager',
     backgroundColor: '#0a0a0a',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
