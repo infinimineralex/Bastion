@@ -33,9 +33,9 @@ export default function FileBrowser() {
   return (
     <div className="bg-white/10 rounded-xl p-6 shadow-md backdrop-blur-sm border border-white/20">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold text-white">Encrypted Files</h2>
+        <h2 className="text-2xl font-semibold text-white drop-shadow-lg">Encrypted Files</h2>
         <button
-          className="px-4 py-2 rounded bg-gradient-to-r from-[#000f9b] to-[#eb0000] text-white font-semibold shadow"
+          className="px-4 py-2 rounded bg-gradient-to-r from-[#000f9b] to-[#eb0000] hover:bg-gradient-to-l text-white font-semibold drop-shadow-xl"
           onClick={handleImport}
         >
           Import File
