@@ -1,25 +1,35 @@
 {
-  "name": "bastionelectron",
+  "name": "Bastion",
   "version": "1.0.0",
   "description": "",
   "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on tcp:5173 && electron .\"",
     "build": "vite build",
-    "start": "electron ."
+    "start": "electron .",
+    "app:dir": "electron-builder --dir",
+    "app:dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "69696969",
+    "mac": {
+      "category": "security"
+    }
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexander Haga",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
-    "electron": "^35.2.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.1",
+    "electron": "^35.2.1",
+    "electron-builder": "^26.0.12",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "postcss": "^8.5.3",
