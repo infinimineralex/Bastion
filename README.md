@@ -22,7 +22,7 @@ Bastion operates entirely on your local device. When you launch the application,
 
 All files stored in Bastion are encrypted using strong, industry-standard cryptographic algorithms. The master password is never stored in plaintext, and all cryptographic operations are performed locally. Bastion does not transmit your data or password over the internet, nor does it rely on any external servers. This local-first approach maximizes privacy and minimizes attack surfaces.
 
-## Security Emphasis
+## Security Overview
 
 - **End-to-End Encryption:** All files are encrypted at rest using robust cryptographic standards.
 - **Master Password Protection:** The vault is protected by a master password, which is required for access.
@@ -50,4 +50,4 @@ Bastion is provided under the MIT License.
 
 ---
 
-Bastion is designed for users who value privacy and security above all. By keeping your data local and encrypted, Bastion ensures that your sensitive information remains yours—and yours alone.
+Bastion is designed for users who value privacy and security above all. By keeping your data local and encrypted, Bastion ensures that your sensitive information remains yours, and yours alone.

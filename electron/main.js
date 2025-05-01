@@ -241,7 +241,7 @@ function createWindow() {
         dialog.showErrorBox('Load Error', `Application file not found at ${indexPath}. The application might be corrupted or installed incorrectly.`);
     }
 
-    // Optional: Add listener for load failure (though loadFile promise handles it too)
+    // If needed we have a listener for load failure (though loadFile promise handles it too)
     win.webContents.on('did-fail-load', (event, errorCode, errorDescription, validatedURL) => {
        console.error(`webContents failed to load URL: ${validatedURL}`, errorCode, errorDescription);
        // Avoid showing duplicate dialog if loadFile already caught it.
